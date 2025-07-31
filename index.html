@@ -351,21 +351,22 @@
                 </div>
 
                 <div class="payment-card">
-                    <div class="qris-icon payment-icon">
-                        <i class="fas fa-qrcode"></i>
-                    </div>
-                    <h3 class="text-xl font-semibold mb-2">QRIS</h3>
-                    <p class="text-gray-400 mb-4">Scan QR Code untuk pembayaran</p>
-                    
-                    <div class="qr-placeholder">
-                        <i class="fas fa-qrcode"></i>
-                    </div>
-                    
-                    <button class="neon-btn w-full" onclick="alert('Fitur scan QR akan segera tersedia!')">
-                        <i class="fas fa-camera mr-2"></i>
-                        Scan QR Code
-                    </button>
-                </div>
+    <div class="qris-icon payment-icon">
+        <i class="fas fa-qrcode"></i>
+    </div>
+    <h3 class="text-xl font-semibold mb-2">QRIS</h3>
+    <p class="text-gray-400 mb-4">Scan QR Code untuk pembayaran</p>
+
+    <div class="flex justify-center mb-4">
+        <img src="kayy.jpg" alt="QRIS Code" class="w-40 h-40 rounded-lg border-2 border-gray-600">
+    </div>
+
+    <button class="neon-btn w-full" onclick="openInNewTab('kayy.jpg')">
+        <i class="fas fa-external-link-alt mr-2"></i>
+        Buka Gambar QR
+    </button>
+</div>
+
 
                 <div class="payment-card md:col-span-2">
                     <div class="bank-icon payment-icon">
@@ -476,6 +477,11 @@
             }, 3000);
         }
 
+        function openInNewTab(url) {
+                window.open(url, '_blank');
+        }
+
+
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
                 e.preventDefault();
@@ -505,6 +511,8 @@
             card.style.transition = 'all 0.6s ease';
             observer.observe(card);
         });
+
+    
     </script>
 </body>
 </html>
